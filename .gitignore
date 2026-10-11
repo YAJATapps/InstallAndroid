@@ -1,0 +1,19 @@
+# Build output
+*.apk
+*.dex
+*.class
+bin/
+gen/
+out/
+.gradle/
+build/
+
+# IDE files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+*.swp
+*~
+.DS_Store

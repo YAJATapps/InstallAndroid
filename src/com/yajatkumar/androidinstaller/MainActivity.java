@@ -284,7 +284,7 @@ public class MainActivity extends Activity {
             long lastPos = 0;
             boolean finished = false;
             boolean success = false;
-            int timeoutSecs = 600; // 10 minute timeout
+            int timeoutSecs = 900; // 15 minute timeout
             long startTime = System.currentTimeMillis();
 
             // Log file is created by root daemon in /metadata/install.log or /data/local/tmp/install.log
@@ -302,7 +302,7 @@ public class MainActivity extends Activity {
 
                 // Check timeout
                 if ((System.currentTimeMillis() - startTime) > (timeoutSecs * 1000L)) {
-                    appendLog("[-] ERROR: Installation timed out after 10 minutes.");
+                    appendLog("[-] ERROR: Installation timed out after 15 minutes.");
                     break;
                 }
 

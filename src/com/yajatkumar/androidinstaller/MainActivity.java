@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -240,6 +241,7 @@ public class MainActivity extends Activity {
         installButton.setEnabled(false);
         progressBar.setVisibility(View.VISIBLE);
         progressBar.setProgress(0);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         appendLog("\n=======================================================");
         appendLog(" [*] Starting LineageOS Installation to /dev/block/" + target);
         appendLog("=======================================================\n");
@@ -251,6 +253,7 @@ public class MainActivity extends Activity {
                 handler.post(new Runnable() {
                     @Override
                     public void run() {
+                        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                         progressBar.setVisibility(View.GONE);
                         if (success) {
                             showRebootDialog();
